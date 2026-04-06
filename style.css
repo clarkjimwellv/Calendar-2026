@@ -1,0 +1,102 @@
+/* Background */
+body {
+  background-image: url("https://wallpapershome.com/images/pages/pic_h/154.jpg");
+  background-size: cover;            /* Fill screen */
+  background-position: center;       /* Center image */
+  background-repeat: no-repeat;      
+  background-attachment: fixed;      /* Parallax effect on desktop */
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;                 /* Ensure full viewport height */
+  margin: 0;
+}
+
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
+
+.calendar-card {
+  background: rgba(255, 255, 255, 0.25); /* Slightly transparent */
+  border-radius: 15px;
+  padding: 15px;
+  backdrop-filter: blur(10px);           /* Blur background behind card */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+  .calendar-card {
+    background: rgba(0,0,0,0.3);
+  }
+}
+
+
+.month-title {
+  text-align: center;
+  color: #00d4ff;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+.calendar-table {
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.calendar-table th {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.calendar-table td {
+  height: 35px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+
+.calendar-table td:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+
+.weekend {
+  color: #00d4ff;
+  font-weight: bold;
+}
+
+
+.holiday {
+  color: #ff4d6d;
+  font-weight: bold;
+}
+
+
+.badge {
+  padding: 8px 12px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+ td[data-holiday]:hover::after {
+      content: attr(data-holiday);
+      position: absolute;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 3px 6px;
+      border-radius: 5px;
+      font-size: 12px;
+      transform: translateY(-120%);
+      white-space: nowrap;
+      z-index: 1000;
+    }
+    .special-holiday {
+      color: #ffb347;
+      font-weight: bold;
+    }
